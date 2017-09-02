@@ -1,0 +1,10 @@
+.columnHeader {
+  background-color: Blue;
+  color: white;
+  padding: 10px;
+}
+
+.info {
+  text-align: right;
+  width: 100%
+}

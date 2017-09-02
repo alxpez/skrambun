@@ -1,14 +1,15 @@
 import React from 'react';
-import { withStyles } from 'material-ui/styles';
 import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
 import Button from 'material-ui/Button';
 import IconButton from 'material-ui/IconButton';
 import MenuIcon from 'material-ui-icons/Menu';
-import AddIcon from 'material-ui-icons/Add'
-import { GridList, GridListTile, GridListTileBar } from 'material-ui/GridList';
-import { MockData } from './mocks'
+import Grid from 'material-ui/Grid';
+
+import Column from './Column';
+
+import { MockData } from '../mocks'
 import './App.css';
 
 
@@ -27,22 +28,11 @@ const App = () => (
 
     <Button raised className="backlogButton">Backlog</Button>
 
-    <GridList className="gridList" cellHeight={75} cols={MockData.columns.length}>
+    <Grid container>
       {MockData.columns.map(column => (
-
-          <GridListTile key={column.id}>
-            <GridListTileBar
-              title={column.name}
-              subtitle={<span>stories: {column.stories.length}</span>}
-              actionIcon={
-                <IconButton>
-                  <AddIcon color="rgba(255, 255, 255, 0.54)" />
-                </IconButton>
-              }
-            />
-          </GridListTile>
+        <Column key={column.id} column={column}/>
       ))}
-    </GridList>
+    </Grid>
   </div>
 );
 
