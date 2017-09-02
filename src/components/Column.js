@@ -6,6 +6,8 @@ import Grid from 'material-ui/Grid';
 import Story from './Story'
 import './Column.css'
 
+
+
 const Column = ({ column }) => (
   <Grid item sm>
     <Toolbar>

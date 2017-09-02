@@ -5,6 +5,8 @@ import Grid from 'material-ui/Grid';
 
 import './Story.css'
 
+
+
 const Story = ({ story }) => (
   <Grid item xs>
     <Paper className="story">
