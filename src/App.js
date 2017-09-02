@@ -17,32 +17,16 @@ const columns = [
   },
 ];
 
-const styles = {
-  root: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'space-around',
-  },
-  tileChild: {
-    width: 50,
-    height: 50,
-  },
-  gridList: {
-    width: 500,
-    height: 450,
-    overflowY: 'auto',
-  },
-};
-
 const App = () => (
   <MuiThemeProvider>
     <div>
       <h1>skrambun</h1>
-      <div style={styles.root}>
-        <GridList style={styles.gridList} cellHeight={100} cols={columns.length}>
+      <div>Backlog</div>
+      <div>
+        <GridList cellHeight={100} cols={columns.length}>
           {columns.map(column => (
             <GridTile key={column.id} title={column.name}>
-              <div style={styles.tileChild}></div>
+              <div></div>
             </GridTile>
           ))}
         </GridList>
