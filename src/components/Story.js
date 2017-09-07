@@ -1,24 +1,42 @@
 import React from 'react';
-import Paper from 'material-ui/Paper';
+import Card, { CardActions, CardContent } from 'material-ui/Card';
 import Typography from 'material-ui/Typography';
 import Grid from 'material-ui/Grid';
+import Avatar from 'material-ui/Avatar';
+import Chip from 'material-ui/Chip';
+import FaceIcon from 'material-ui-icons/Face';
 
 import './Story.css'
 
 
+function handleClick(event) {
+  event.preventDefault();
+}
+
 const Story = ({ story }) => (
-  <Grid item xs>
-    <Paper className="story">
-      <Typography type="title">
-        {story.title}
-      </Typography>
-      <Typography type="subheading">
-        {story.description}
-      </Typography>
-      <Typography type="subheading">
-        Assigned: {story.assignedTo}
-      </Typography>
-    </Paper>
+  <Grid item sm>
+    <Card>
+      <CardContent>
+        <Typography type="subheading">
+          {story.title}
+        </Typography>
+        <Typography type="caption">
+          {story.description}
+        </Typography>
+        <Chip
+          avatar={
+            <Avatar>
+              <FaceIcon/>
+            </Avatar>
+          }
+          label={story.assignedTo}
+          onClick={handleClick}
+        />
+      </CardContent>
+      {/* <CardActions>
+        <Button dense>Learn More</Button>
+      </CardActions> */}
+    </Card>
   </Grid>
 );
 

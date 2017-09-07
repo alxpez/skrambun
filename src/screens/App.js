@@ -7,10 +7,10 @@ import IconButton from 'material-ui/IconButton';
 import MenuIcon from 'material-ui-icons/Menu';
 import Grid from 'material-ui/Grid';
 
-import Column from './Column';
+import Backlog from '../components/Backlog';
+import Column from '../components/Column';
 
 import { MockData } from '../mocks'
-import './App.css';
 
 
 const App = () => (
@@ -26,9 +26,9 @@ const App = () => (
       </Toolbar>
     </AppBar>
 
-    <Button raised className="backlogButton">Backlog</Button>
+    <Backlog backlog={MockData.backlog}/>
 
-    <Grid container>
+    <Grid container justify="space-around" align="stretch" direction="row" spacing={Number(8)}>
       {MockData.columns.map(column => (
         <Column key={column.id} column={column}/>
       ))}
